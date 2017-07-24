@@ -20,5 +20,7 @@ class CuratorTest < Minitest::Test
     curator = Curator.new
     curator.add_museum({id: 1, name: "MoMA"})
     assert_instance_of Museum, curator.museums.first
+    assert_equal 1, curator.museums.count
+    assert_equal 1, curator.museums.first.id
   end
 end
