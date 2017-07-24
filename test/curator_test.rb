@@ -19,5 +19,6 @@ class CuratorTest < Minitest::Test
   def test_curator_can_add_museum
   curator = Curator.new
   curator.add_museum({name: "MoMA"})
+  assert_equal 1, curator.museums.count
   end
 end
