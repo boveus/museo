@@ -7,7 +7,7 @@ class Photograph
 
   def initialize(info)
     @info = info
-    @id = 1
+    @id = info[:id]
     @artist_id = info[:artist_id]
     @museum_id = info[:museum_id]
     @name = info[:name]
