@@ -23,4 +23,13 @@ class Curator
     new_photograph = Photograph.new(photograph)
     @photographs << new_photograph
   end
+
+  def find_museum(id, found_museum = '')
+    @museums.each do |museum|
+      if museum.id == id
+        found_museum = museum
+      end
+    end
+    found_museum
+  end
 end
