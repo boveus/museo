@@ -9,6 +9,7 @@ class Curator
     @photographs = []
   end
   def add_museum(museum)
-    @museums << museum
+    added_museum = Museum.new(museum)
+    @museums << added_museum
   end
 end
