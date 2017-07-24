@@ -19,6 +19,12 @@ class PhotographTest < Minitest::Test
   def test_museum_id
     assert_equal 2, @photograph.museum_id
   end
+  def test_photograph_name
+    assert_equal "Rue Mouffetard, Paris (Boy with Bottles)", @photograph.name
+  end
+  def test_photograph_year
+    assert_equal 1954, @photograph.year
+  end
 end
 
 #
