@@ -64,4 +64,17 @@ class CuratorTest < Minitest::Test
     assert_equal "Ansel Adams", artist.name
     assert_equal 1, artist.id
   end
+
+  def test_find_by_photograph
+    curator = Curator.new
+    curator.add_museum({id: 1, name: "Metropolitan Museum of Art"})
+    curator.add_artist({id: 1, name: "Diane Arbus", born: 1923, died: 1971, country: "United States"})
+    curator.add_photograph({id: 1, name: "Identical Twins, Roselle, New Jersey", artist_id: 1, museum_id: 1, year: 1967})
+    photograph = curator.photographs.first
+
+    museum = curator.find_museum_by_photograph(photograph)
+
+    assert_equal 1, museum.id
+    assert_equal "Metropolitan Museum of Art", museum.name
+  end
 end
