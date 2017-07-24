@@ -13,8 +13,12 @@ class PhotographTest < Minitest::Test
   def test_retrieve_id
     assert_equal 1, @photograph.id
   end
-  def
-
+  def test_artist_id
+    assert_equal 4, @photograph.artist_id
+  end
+  def test_museum_id
+    assert_equal 2, @photograph.museum_id
+  end
 end
 
 #
