@@ -55,4 +55,13 @@ class CuratorTest < Minitest::Test
     assert_equal "Museo de Arte Moderno", museum.name
     assert_equal 1, museum.id
   end
+
+  def test_curator_find_artist_by_id
+    curator = Curator.new
+    curator.add_artist({id: 1, name: "Ansel Adams", born: 1902, died: 1984, country: "United States"})
+    artist = curator.find_artist(1)
+
+    assert_equal "Ansel Adams", artist.name
+    assert_equal 1, artist.id
+  end
 end

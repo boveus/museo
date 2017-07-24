@@ -24,12 +24,21 @@ class Curator
     @photographs << new_photograph
   end
 
-  def find_museum(id, found_museum = '')
+  def find_museum(id, found_museum = nil)
     @museums.each do |museum|
       if museum.id == id
         found_museum = museum
       end
     end
     found_museum
+  end
+
+  def find_artist(id, found_artist = nil)
+    @artists.each do |artist|
+      if artist.id == id
+        found_artist = artist
+      end
+    end
+    found_artist
   end
 end
